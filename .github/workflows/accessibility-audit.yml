@@ -1,13 +1,8 @@
+# Managed by CarlasHub Accessibility Audit. Re-run setup to update selected pages.
 name: Accessibility audit
 
 on:
   workflow_dispatch:
-    inputs:
-      urls:
-        description: Public HTTPS pages to audit, one per line (maximum 20)
-        required: true
-        type: string
-        default: https://example.com/
 
 permissions:
   contents: read
@@ -16,13 +11,17 @@ jobs:
   audit:
     name: Audit website
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - id: audit
         name: Run WCAG 2.2 audit
         uses: CarlasHub/accessibility-audit-plugin@v1
         with:
-          urls: ${{ inputs.urls }}
+          urls: |-
+            https://example.com/
+          allowed-hosts: 'example.com'
+          exact-hosts: 'example.com'
+          max-pages: '20'
           fail-on: none
           comment-on-pr: 'false'
 
@@ -32,7 +31,9 @@ jobs:
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: accessibility-audit
-          path: ${{ steps.audit.outputs.output-dir }}
+          path: |
+            ${{ steps.audit.outputs.output-dir }}
+            ${{ steps.audit.outputs.archive-path }}
           if-no-files-found: error
           retention-days: 14
 
