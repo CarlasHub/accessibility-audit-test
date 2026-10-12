@@ -18,8 +18,27 @@ jobs:
         uses: CarlasHub/accessibility-audit-plugin@v1
         with:
           urls: |-
-            https://example.com/
-          allowed-hosts: 'example.com'
+            https://carlashub.com/
+            https://carlashub.com/04-why-i-spent-so-much-time-on-demos
+            https://carlashub.com/05-my-first-ai-phase-was-still-experimental
+            https://carlashub.com/08-the-bookmarklet-hit-a-wall
+            https://carlashub.com/09-the-extension-pivot
+            https://carlashub.com/11-release-vs-test-extension
+            https://carlashub.com/13-moving-toward-on-device-ai
+            https://carlashub.com/a-new-accessibility-test-case-manager
+            https://carlashub.com/A11Y-Cat-03-turning-the-panel-into-a-command-tool
+            https://carlashub.com/A11Y-Cat-06-when-i-got-serious-about-verification
+            https://carlashub.com/A11Y-Cat-07-why-i-built-a-local-assistant-backend
+            https://carlashub.com/A11Y-Cat-10-splitting-core-from-delivery
+            https://carlashub.com/A11Y-Cat-12-getting-honest-about-screen-reader-claims
+            https://carlashub.com/A11Y-Cat-14-the-tool-got-wider-before-it-got-deeper
+            https://carlashub.com/A11Y-Cat-15-contrast-and-honesty
+            https://carlashub.com/A11Y-Cat-16-language-headings-and-structure
+            https://carlashub.com/A11Y-Cat-17-why-i-split-issue-types
+            https://carlashub.com/A11Y-Cat-18-why-provenance-started-mattering
+            https://carlashub.com/A11Y-Cat-19-history-baselines-and-local-state
+            https://carlashub.com/A11Y-Cat-20-diagnostics-and-boundaries
+          allowed-hosts: 'carlashub.com'
           fail-on: none
           comment-on-pr: 'false'
 
