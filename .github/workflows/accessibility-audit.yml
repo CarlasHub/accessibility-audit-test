@@ -20,8 +20,6 @@ jobs:
           urls: |-
             https://example.com/
           allowed-hosts: 'example.com'
-          exact-hosts: 'example.com'
-          max-pages: '20'
           fail-on: none
           comment-on-pr: 'false'
 
